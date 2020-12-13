@@ -1,15 +1,24 @@
 {
   "name": "common-vue-ui",
+  "author": "kybetter",
   "version": "0.1.0",
   "private": true,
+  "main": "lib/cui.common.js",
+  "style": "lib/styles/index.css",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest lib --target lib --name cui ./src/index.js && yarn build:components && yarn build:style",
+    "build:components": "vue-cli-service build --mode components --no-clean",
+    "build:style": "gulp build --gulpfile ./build-style.js",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
+  "peerdependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
@@ -22,13 +31,19 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.2.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.1.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {
