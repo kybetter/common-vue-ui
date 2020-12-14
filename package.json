@@ -1,9 +1,8 @@
 {
   "name": "common-vue-ui",
   "author": "kybetter",
-  "version": "0.1.0",
-  "private": true,
-  "main": "lib/cui.common.js",
+  "version": "0.0.1",
+  "main": "lib/cui.umd.min.js",
   "style": "lib/styles/index.css",
   "files": [
     "lib",
