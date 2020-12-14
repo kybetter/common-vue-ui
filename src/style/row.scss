@@ -1,0 +1,7 @@
+@import "utils.scss";
+
+.c-row {
+  position: relative;
+  box-sizing: border-box;
+  @include utils-clearfix;
+}

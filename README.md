@@ -1,34 +1,33 @@
 # common-vue-ui
 
-## Project setup
-```
-yarn install
+**一款兼容 ie9+ 的面向 C 端的无样式 PC 组件库**
+
+> 设计思想，因为面向 C 端的应用样式各异，没有一个统一的定式，所以在选用组件库时，很难找到既兼容 ie 又符合你产品样式的组件库，很多时候我们只能自己重复造轮子。所以才想着造一个不指定样式的组件库，以便大家方便自定义样式。我会默认提供一个简单的样式。
+
+### 安装
+```bash
+$ yarn add common-vue-ui
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
+### 使用
+```js
+import CUI from 'common-vue-ui';
+// 必须的基础样式
+import 'common-vue-ui/lib/styles/index.css';
+// 在这里引入自定义组件样式;
+// import 'common-vue-ui/lib/styles/default-theme.css';
+
+Vue.use(CUI);
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### 组件
 
-### Run your unit tests
-```
-yarn test:unit
-```
+#### 栅格组件 row & col
 
-### Run your end-to-end tests
+```html
+<c-row :gutter="10">
+  <c-col :span="8">common-vue-ui</c-col>
+  <c-col :span="8">common-vue-ui</c-col>
+  <c-col :span="8">common-vue-ui</c-col>
+</c-row>
 ```
-yarn test:e2e
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

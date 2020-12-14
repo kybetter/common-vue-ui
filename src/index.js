@@ -1,7 +1,7 @@
-import Test from './components/test/index.js';
-import Avata from './components/avata/index.js';
+import Row from './components/row/index.js';
+import Col from './components/col/index.js';
 
-const components = [Test, Avata];
+const components = [Row, Col];
 
 const install = function(Vue) {
   components.map(component => {
@@ -9,11 +9,11 @@ const install = function(Vue) {
   });
 };
 
-export { Test, Avata, install };
+export { Row, Col, install };
 
 export default {
-  version: '0.0.1',
+  version: require('../package.json').version,
   install,
-  Test,
-  Avata
+  Row,
+  Col
 };

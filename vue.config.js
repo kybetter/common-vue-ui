@@ -1,9 +1,5 @@
 const path = require('path');
-
-const components = {
-  test: 'components/test/index.js',
-  avata: 'components/avata/index.js'
-};
+const components = require('./src/components/index');
 
 let entries = {};
 Object.keys(components).forEach(key => {
