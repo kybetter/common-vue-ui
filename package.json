@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --dest lib --target lib --name cui ./src/index.js && yarn build:style",
+    "build": "vue-cli-service build --dest lib --target lib --name cui ./src/index.js && yarn build:components && yarn build:style",
     "build:components": "vue-cli-service build --mode components --no-clean",
     "build:style": "gulp build --gulpfile ./build-style.js",
     "test:unit": "vue-cli-service test:unit",
