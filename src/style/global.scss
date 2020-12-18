@@ -19,8 +19,8 @@ input::-ms-reveal {
 }
 
 html {
-  font-family: sans-serif;
-  line-height: 1.15;
+  // font-family: sans-serif;
+  // line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -33,7 +33,7 @@ body {
   font-size: 14px;
   font-family: $font-family;
   font-variant: tabular-nums;
-  line-height: 1.5715;
+  line-height: 1.5;
   background-color: #fff;
   font-feature-settings: 'tnum';
 }
@@ -213,4 +213,12 @@ progress {
 
 .clearfix {
   @include utils-clearfix;
+}
+
+.base-shadow {
+  @include utils-base-shadow;
+}
+
+.light-shadow {
+  @include utils-light-shadow;
 }

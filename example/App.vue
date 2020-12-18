@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     <c-row>
-      <c-col :span="3">common-vue-ui</c-col>
-      <c-col :span="8">common-vue-ui</c-col>
-      <c-col :span="8">common-vue-ui</c-col>
-      <c-col :span="16">common-vue-ui</c-col>
+      <c-col :span="24">
+        <c-button style="margin-right: 10px;">默认按钮</c-button>
+        <c-button type="primary">确认按钮</c-button>
+        <c-button type="text">文字按钮</c-button>
+        <c-button disabled style="margin-right: 10px;">默认按钮</c-button>
+        <c-button disabled type="primary">确认按钮</c-button>
+        <c-button disabled type="text">文字按钮</c-button>
+        <c-button loading type="primary">加载中...</c-button>
+      </c-col>
     </c-row>
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
