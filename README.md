@@ -12,7 +12,7 @@ $ yarn add common-vue-ui
 ### 使用
 ```js
 import CUI from 'common-vue-ui';
-// 必须的基础样式
+// 必须的基础样式（包括了 row、col 等基础布局组件的样式）
 import 'common-vue-ui/lib/styles/index.css';
 // 可以引入全部组件的默认的样式
 // import 'common-vue-ui/lib/styles/default-theme.css';
