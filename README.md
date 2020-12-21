@@ -1,6 +1,6 @@
 # common-vue-ui
 
-**一款面向 C 端的无样式 PC 组件库**
+**一款面向 C 端的 PC 组件库**
 
 > 设计初衷：因为面向 C 端的应用样式各异，没有一个统一的定式，所以在选用组件库时，很难找到既兼容 IE 又符合你产品样式的组件库，很多时候我们只能自己重复造轮子。所以才想着造一个不依赖于组件内置样式的组件库，以便大家方便自定义样式。会提供一个默认样式，方便大家参考修改。
 
@@ -10,9 +10,12 @@ $ yarn add common-vue-ui
 ```
 
 ### 使用
+
+> 组件的样式均以`c-`开头
+
 ```js
 import CUI from 'common-vue-ui';
-// 必须的基础样式（包括了 row、col 等基础布局组件的样式）
+// 必须的基础样式（包括了 row、col、ellipsis 等基础组件的样式）
 import 'common-vue-ui/lib/styles/index.css';
 // 可以引入全部组件的默认的样式
 // import 'common-vue-ui/lib/styles/default-theme.css';
@@ -75,4 +78,17 @@ font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe
 <!-- 预先提供了 size 属性，值需自己定义，没有提供默认样式，需自己写，只需要调整 padding 值即可，样式会以：“c-button--” 为前缀，比如：c-button--small -->
 <c-button size="small" type="primary">调整按钮大小</c-button>
 
+```
+
+#### 文本省略组件 ellipsis
+
+> 适用于单行或者多行文本的末尾需要有省略号的情况
+
+```html
+<!-- 单行 -->
+<c-ellipsis :html="htmlData" :rows="1"></c-ellipsis>
+<!-- 如果需要行内展示，需自行设置 -->
+<c-ellipsis style="display: inline-block;" :text="textData" :rows="1"></c-ellipsis>
+<!-- 多行 -->
+<c-ellipsis :text="textData" :rows="4"></c-ellipsis>
 ```

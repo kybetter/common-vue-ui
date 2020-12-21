@@ -1,8 +1,9 @@
 import Row from './components/row/index.js';
 import Col from './components/col/index.js';
 import Button from './components/button/index.js';
+import Ellipsis from './components/ellipsis/index.js';
 
-const components = [Row, Col, Button];
+const components = [Row, Col, Button, Ellipsis];
 
 const install = function(Vue, opts = {}) {
   components.forEach(component => {
@@ -15,12 +16,13 @@ const install = function(Vue, opts = {}) {
   };
 };
 
-export { Row, Col, Button, install };
+export { Row, Col, Button, Ellipsis, install };
 
 export default {
   version: require('../package.json').version,
   install,
   Row,
   Col,
-  Button
+  Button,
+  Ellipsis
 };
