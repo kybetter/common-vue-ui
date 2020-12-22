@@ -11,7 +11,7 @@ $ yarn add common-vue-ui
 
 ### 使用
 
-> 组件的样式均以`c-`开头
+> 组件的样式均以`c-`开头，如需自定义请到 `common-vue-ui/lib/styles` 中查看相应组件默认样式
 
 ```js
 import CUI from 'common-vue-ui';
@@ -91,4 +91,18 @@ font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe
 <c-ellipsis style="display: inline-block;" :text="textData" :rows="1"></c-ellipsis>
 <!-- 多行 -->
 <c-ellipsis :text="textData" :rows="4"></c-ellipsis>
+```
+
+#### 固钉 Affix 
+
+> 常用于漂浮广告，回到首页，只提供了基本的固定功能，其它样式需自定义，可以传入 top、left、right、bottom 这四个属性
+
+```html
+<c-affix right="20px" bottom="20px" style="width: 50px; height: 50px;">
+  <span>固钉组件</span>
+</c-affix>
+
+<c-affix top="20px" left="20px" style="width: 50px; height: 50px;">
+  <span>固钉组件</span>
+</c-affix>
 ```

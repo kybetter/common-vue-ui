@@ -16,20 +16,19 @@
       <c-col :span="24">
         <c-ellipsis style="width: 500px;margin: 0 auto;" :html="zhHtml" :rows="4"></c-ellipsis>
       </c-col>
+      <c-col :span="24">
+        <c-affix style="width: 50px;height: 50px;background: pink;" right="20px" bottom="20px">
+          <span>固钉组件</span>
+        </c-affix>
+      </c-col>
     </c-row>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
+  components: {},
   data() {
     return {
       zhHtml:
