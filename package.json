@@ -12,10 +12,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest lib --target lib --name cui ./src/index.js && yarn build:components && yarn build:style",
     "build:components": "vue-cli-service build --mode components --no-clean",
-    "build:style": "gulp build --gulpfile ./build-style.js",
+    "build:style": "sass --no-source-map src/styles:lib/styles",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "watch:style": "sass --no-source-map --watch src/styles:lib/styles"
   },
   "peerdependencies": {
     "core-js": "^3.6.5",
@@ -40,7 +41,7 @@
     "gulp-sass": "^4.1.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "sass": "^1.26.5",
+    "sass": "^1.30.0",
     "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"

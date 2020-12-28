@@ -1,4 +1,4 @@
-@import "utils.scss";
+@use "utils.scss" as *;
 
 .c-row {
   position: relative;

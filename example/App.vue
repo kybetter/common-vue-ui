@@ -21,6 +21,15 @@
           <span>固钉组件</span>
         </c-affix>
       </c-col>
+      <c-col :span="24">
+        <div style="width: 500px;margin: 0 auto;">
+          <span class="c-text-blue-200">我是带有颜色的文字</span>
+          <span class="c-text-blue-400">我是带有颜色的文字</span>
+          <span class="c-text-blue-600">我是带有颜色的文字</span>
+          <span class="c-text-amber-400">我是带有颜色的文字</span>
+          <span class="c-text-emerald-600">我是带有颜色的文字</span>
+        </div>
+      </c-col>
     </c-row>
   </div>
 </template>
