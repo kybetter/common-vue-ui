@@ -55,7 +55,5 @@
       "git add"
     ]
   },
-  "dependencies": {
-    "popper.js": "^1.16.1"
-  }
+  "dependencies": {}
 }

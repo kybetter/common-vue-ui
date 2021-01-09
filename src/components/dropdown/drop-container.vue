@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Popper from 'popper.js';
+import Popper from '@/utils/popper/dist/umd/popper.js';
 
 export default {
   name: 'CDropContainer',
