@@ -1,5 +1,5 @@
-@use 'reset.scss' as *;
-@use 'utils.scss' as utils;
+@use 'reset.scss';
+@use 'utils.scss';
 
 .c-clearfix {
   @include utils.utils-clearfix;
@@ -24,5 +24,3 @@
 .c-shadow-2xl {
   @include utils.utils-shadow-2xl;
 }
-
-// @include utils.opacity;

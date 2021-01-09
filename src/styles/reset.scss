@@ -1,4 +1,4 @@
-@use 'font.scss' as *;
+@use 'font.scss';
 
 blockquote,
 dl,
@@ -53,11 +53,13 @@ html {
 body {
   margin: 0;
   font-size: 14px;
-  font-family: $font-family;
+  font-family: font.$font-family;
   font-variant: tabular-nums;
   line-height: 1.5;
   background-color: #fff;
   font-feature-settings: 'tnum';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 [tabindex='-1']:focus {

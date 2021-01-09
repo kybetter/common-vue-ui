@@ -10,25 +10,33 @@
         <c-button disabled type="text">文字按钮</c-button>
         <c-button loading type="primary">加载中...</c-button>
       </c-col>
-      <c-col style="margin: 20px 0;" :span="24">
-        <c-ellipsis style="width: 500px;margin: 0 auto;" :html="enHtml" :rows="1"></c-ellipsis>
+      <c-col style="margin: 20px 0" :span="24">
+        <c-ellipsis style="width: 160px; margin: 0 auto" :html="enHtml" :rows="2"></c-ellipsis>
       </c-col>
       <c-col :span="24">
-        <c-ellipsis style="width: 500px;margin: 0 auto;" :html="zhHtml" :rows="4"></c-ellipsis>
+        <c-ellipsis style="width: 500px; margin: 0 auto" :html="zhHtml" :rows="4"></c-ellipsis>
       </c-col>
       <c-col :span="24">
-        <c-affix style="width: 50px;height: 50px;background: pink;" right="20px" bottom="20px">
+        <c-affix style="width: 50px; height: 50px; background: pink" right="20px" bottom="20px">
           <span>固钉组件</span>
         </c-affix>
       </c-col>
       <c-col :span="24">
-        <div style="width: 500px;margin: 0 auto;">
+        <div style="width: 500px; margin: 0 auto">
           <span class="c-text-blue-200">我是带有颜色的文字</span>
           <span class="c-text-blue-400">我是带有颜色的文字</span>
           <span class="c-text-blue-600">我是带有颜色的文字</span>
           <span class="c-text-amber-400">我是带有颜色的文字</span>
           <span class="c-text-emerald-600">我是带有颜色的文字</span>
         </div>
+      </c-col>
+      <c-col :span="24">
+        <c-dropdown>
+          <span>下拉菜单</span>
+          <c-dropdown-menu slot="dropdown">
+            <span @click="test">下拉菜单项</span>
+          </c-dropdown-menu>
+        </c-dropdown>
       </c-col>
     </c-row>
   </div>
@@ -45,13 +53,24 @@ export default {
       enHtml:
         '2020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 20202020 5th International Workshop on Materials Engineering and Computer Sciences 2020'
     };
+  },
+  mounted() {},
+  methods: {
+    test() {
+      console.log(2342342);
+    }
+    // togglePop() {
+    //   this.showPop = !this.showPop;
+    //   if (this.showPop) {
+
+    //   }
+    // }
   }
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

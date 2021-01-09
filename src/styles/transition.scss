@@ -1,0 +1,53 @@
+// .c-transition-drop-enter,
+// .c-transition-drop-leave-to {
+//   opacity: 0;
+//   transform: translateY(12px);
+// }
+
+// .c-transition-drop-enter-active,
+// .c-transition-drop-leave-active {
+//   transition: opacity cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms,
+//     transform cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms;
+// }
+
+.c-transition-drop-enter-active {
+  // animation-duration: 0.3s;
+  // animation-fill-mode: both;
+  // // animation-play-state: paused;
+  // animation-name: slideIn;
+  // animation-play-state: running;
+  // opacity: 0;
+  // animation-timing-function: ease-in-out;
+  animation: slideIn 0.3s ease-in-out;
+}
+.c-transition-drop-leave-active {
+  // animation-duration: 0.3s;
+  // animation-fill-mode: both;
+  // // animation-play-state: paused;
+  // animation-name: slideOut;
+  // animation-play-state: running;
+  // animation-timing-function: ease-in-out;
+  animation: slideOut 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+}

@@ -3,12 +3,15 @@ import Col from './components/col/index.js';
 import Button from './components/button/index.js';
 import Ellipsis from './components/ellipsis/index.js';
 import Affix from './components/affix/index.js';
+import Dropdown from './components/dropdown/index.js';
 
-const components = [Row, Col, Button, Ellipsis, Affix];
+const DropdownMenu = Dropdown.Menu;
+
+const components = { Row, Col, Button, Ellipsis, Affix, Dropdown, DropdownMenu };
 
 const install = function(Vue, opts = {}) {
-  components.forEach(component => {
-    Vue.use(component);
+  Object.keys(components).forEach(name => {
+    Vue.use(components[name]);
   });
 
   Vue.prototype.$CUI_CONFIG = {
@@ -17,14 +20,10 @@ const install = function(Vue, opts = {}) {
   };
 };
 
-export { Row, Col, Button, Ellipsis, Affix, install };
-
 export default {
   version: require('../package.json').version,
   install,
-  Row,
-  Col,
-  Button,
-  Ellipsis,
-  Affix
+  ...components
 };
+
+export { Row, Col, Button, Ellipsis, Affix, Dropdown, DropdownMenu };

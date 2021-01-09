@@ -1,0 +1,17 @@
+@use 'transition.scss';
+
+.c-dropdown {
+  display: inline-block;
+  // position: relative;
+}
+.c-dropdown-ref {
+  position: relative;
+}
+.c-dropdown-menu {
+  padding: 30px;
+  border: 1px solid #ccc;
+  background: white;
+}
+.c-drop-container {
+  // position: absolute;
+}

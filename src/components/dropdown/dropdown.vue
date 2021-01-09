@@ -8,27 +8,38 @@
     <div class="c-dropdown-ref" ref="reference" @click="handleClick">
       <slot></slot>
     </div>
-    <slot name="dropdown"></slot>
+    <transition name="c-transition-drop">
+      <drop-container
+        ref="drop"
+        v-show="currentVisible"
+        v-transfer-dom
+        @mouseenter.native="handleMouseenter"
+        @mouseleave.native="handleMouseleave"
+      >
+        <slot name="dropdown"></slot>
+      </drop-container>
+    </transition>
   </div>
 </template>
 
 <script>
 import Clickoutside from '../../utils/clickoutside';
+import TransferDom from '../../utils/transfer-dom';
+import DropContainer from './drop-container.vue';
 
 export default {
   name: 'CDropdown',
-  directives: { Clickoutside },
-  components: {},
+  directives: { Clickoutside, TransferDom },
+  components: { DropContainer },
+  provide() {
+    return {
+      dropdown: this
+    };
+  },
   props: {
     trigger: {
       type: String,
-      default: 'hover',
-      validator(value) {
-        if (value !== 'hover' || value !== 'click') {
-          return false;
-        }
-        return true;
-      }
+      default: 'click'
     },
     hideTimeout: {
       type: Number,
@@ -46,7 +57,6 @@ export default {
   data() {
     return {
       timeout: null,
-      triggerElm: null,
       currentVisible: this.visible
     };
   },
@@ -56,9 +66,14 @@ export default {
     },
     currentVisible(val) {
       if (val) {
-        // this.$refs.drop.update();
+        this.$refs.drop.update();
+      } else {
+        this.$refs.drop.destroy();
       }
     }
+  },
+  created() {
+    // this.triggerElm = this;
   },
   methods: {
     handleClick() {
@@ -74,46 +89,27 @@ export default {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
         this.currentVisible = true;
-      }, this.hideTimeout);
+      }, 250);
     },
-    handleMounseleave() {
+    handleMouseleave() {
       if (this.trigger !== 'hover') {
         return false;
       }
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
         this.currentVisible = false;
-      }, this.hideTimeout);
+      }, 150);
     },
     onClickoutside() {
-      this.handleClose();
-      // if (this.currentVisible) {
-      //   this.$emit('on-clickoutside', e);
-      // }
-      if (this.triggerElm.disabled) return;
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(
-        () => {
-          this.visible = false;
-        },
-        this.trigger === 'click' ? 0 : this.hideTimeout
-      );
-    },
-    handleClose() {
       if (this.trigger !== 'click') {
         return false;
       }
-      this.currentVisible = false;
-    },
-    hide() {
-      if (this.triggerElm.disabled) return;
+      // this.handleClose();
+      // if (this.triggerElm.disabled) return;
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(
-        () => {
-          this.visible = false;
-        },
-        this.trigger === 'click' ? 0 : this.hideTimeout
-      );
+      this.timeout = setTimeout(() => {
+        this.currentVisible = false;
+      }, 0);
     }
   }
 };
