@@ -1,5 +1,18 @@
 <template>
   <div id="app">
+    <div style="width: 1200px; margin: 20px auto">
+      <c-row :gutter="20">
+        <c-col :span="8">
+          <div class="c-bg-blue-400">test</div>
+        </c-col>
+        <c-col :span="8">
+          <div class="c-bg-blue-400">test</div>
+        </c-col>
+        <c-col :span="8">
+          <div class="c-bg-blue-400">test</div>
+        </c-col>
+      </c-row>
+    </div>
     <c-row>
       <c-col :span="24">
         <c-button style="margin-right: 10px">默认按钮</c-button>

@@ -22,7 +22,7 @@ export default {
   computed: {
     gutter() {
       let parent = this.$parent;
-      while (parent && parent.$options.componentName !== 'CRow') {
+      while (parent && parent.$options.name !== 'CRow') {
         parent = parent.$parent;
       }
       return parent ? parent.gutter : 0;
