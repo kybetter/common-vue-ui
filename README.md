@@ -12,6 +12,8 @@ $ yarn add common-vue-ui
 ```
 ### 使用
 
+#### 全部引用
+
 ```js
 import CUI from 'common-vue-ui';
 // 必须的基础样式（包括了 row、col、ellipsis 等基础组件的样式）
