@@ -2299,6 +2299,11 @@ commander@~2.19.0:
   resolved "https://registry.npm.taobao.org/commander/download/commander-2.19.0.tgz?cache=0&sync_timestamp=1613373913701&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha1-9hmKqE5bg8RgVLlN3tv+1e6f8So=
 
+common-vue-ui@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.npmjs.org/common-vue-ui/-/common-vue-ui-0.0.12.tgz#13c84aba49d35370404a73f11ce318bdce997c5d"
+  integrity sha512-3QZd0SzPf2M6eoiR23OlObKoODSzEnocYgRj/v6H95lCFHHkrlnrIvPhTHya0hoJUvbq6cjIfMnIlC4XYvFusg==
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/commondir/download/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"

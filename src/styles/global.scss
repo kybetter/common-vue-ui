@@ -1,26 +1,2 @@
 @use 'reset.scss';
 @use 'utils.scss';
-
-.c-clearfix {
-  @include utils.utils-clearfix;
-}
-
-.c-shadow-sm {
-  @include utils.utils-shadow-sm;
-}
-
-.c-shadow {
-  @include utils.utils-shadow;
-}
-
-.c-shadow-lg {
-  @include utils.utils-shadow-lg;
-}
-
-.c-shadow-xl {
-  @include utils.utils-shadow-xl;
-}
-
-.c-shadow-2xl {
-  @include utils.utils-shadow-2xl;
-}

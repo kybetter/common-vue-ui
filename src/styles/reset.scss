@@ -103,7 +103,6 @@ dd {
 }
 
 a {
-  color: #333;
   text-decoration: none;
   background-color: transparent;
   outline: none;
@@ -112,7 +111,6 @@ a {
   -webkit-text-decoration-skip: objects;
   &:active,
   &:hover {
-    color: #333;
     text-decoration: none;
     outline: 0;
   }

@@ -42,3 +42,27 @@
     }
   }
 }
+
+.c-clearfix {
+  @include utils-clearfix;
+}
+
+.c-shadow-sm {
+  @include utils-shadow-sm;
+}
+
+.c-shadow {
+  @include utils-shadow;
+}
+
+.c-shadow-lg {
+  @include utils-shadow-lg;
+}
+
+.c-shadow-xl {
+  @include utils-shadow-xl;
+}
+
+.c-shadow-2xl {
+  @include utils-shadow-2xl;
+}

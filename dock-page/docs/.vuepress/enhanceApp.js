@@ -1,7 +1,8 @@
 import CUI from "common-vue-ui";
-import "common-vue-ui/lib/styles/index.css";
+// import "common-vue-ui/lib/styles/index.css";
 import "common-vue-ui/lib/styles/default-theme.css";
 import "common-vue-ui/lib/styles/colors.css";
+import "common-vue-ui/lib/styles/utils.css";
 
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
