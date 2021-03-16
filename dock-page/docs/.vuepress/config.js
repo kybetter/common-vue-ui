@@ -2,12 +2,13 @@ module.exports = {
   title: 'common-vue-ui',
   description: '一款面向 C 端的 vue 组件库',
   base: '/cui-pages/',
+  dest: './dist',
   evergreen: true,
   themeConfig: {
     displayAllHeaders: true,
     nav: [
       { text: '首页', link: '/' },
-      { text: 'GitHub', link: 'https://github.com/kybetter/common-vue-ui' },
+      { text: 'GitHub', link: 'https://github.com/kybetter/common-vue-ui' }
     ],
     sidebar: [
       '/guide',
@@ -18,10 +19,30 @@ module.exports = {
           '/components/grid',
           '/components/button',
           '/components/ellipsis',
-          '/components/affix',
+          '/components/affix'
         ]
-
       }
     ]
+  },
+  configureWebpack: (config, isServer) => {
+    // if (!isServer) {
+    return {
+      module: {
+        rules: [
+          {
+            test: /\.s[ac]ss$/i,
+            use: [
+              // Creates `style` nodes from JS strings
+              'style-loader',
+              // Translates CSS into CommonJS
+              'css-loader',
+              // Compiles Sass to CSS
+              'sass-loader'
+            ]
+          }
+        ]
+      }
+    };
+    // }
   }
-}
+};

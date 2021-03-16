@@ -15,6 +15,7 @@ components.forEach(component => {
 });
 
 module.exports = merge(webpackBaseConfig, {
+  mode: process.env.NODE_ENV,
   entry: entries,
   output: {
     path: path.resolve(__dirname, '../lib'),

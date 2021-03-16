@@ -8,6 +8,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 process.env.NODE_ENV = 'production';
 
 module.exports = merge(webpackBaseConfig, {
+  mode: process.env.NODE_ENV,
   entry: {
     main: './src/index.js'
   },
@@ -23,10 +24,12 @@ module.exports = merge(webpackBaseConfig, {
     vue: {
       root: 'Vue',
       commonjs: 'vue',
+      commonjs2: 'vue',
       amd: 'vue'
     }
   },
   optimization: {
+    concatenateModules: true,
     minimize: true,
     minimizer: [
       new TerserPlugin({

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { isStyleSupport, pxToNumber } from '@/utils/_utils';
+import { isStyleSupport, pxToNumber } from '../../utils/_utils';
 
 const isTextOverflowSupport = isStyleSupport('textOverflow');
 const isLineClampSupport = isStyleSupport('webkitLineClamp');

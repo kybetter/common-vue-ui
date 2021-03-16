@@ -61,7 +61,9 @@ export default {
   },
   methods: {
     handleClick(evt) {
-      this.$emit('click', evt);
+      if (!(this.buttonDisabled || this.loading)) {
+        this.$emit('click', evt);
+      }
     }
   }
 };
