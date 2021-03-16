@@ -2,7 +2,7 @@ module.exports = {
   title: 'common-vue-ui',
   description: '一款面向 C 端的 vue 组件库',
   base: '/cui-pages/',
-  dest: './dist',
+  dest: '../docs',
   evergreen: true,
   themeConfig: {
     displayAllHeaders: true,
