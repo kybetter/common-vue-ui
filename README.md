@@ -4,7 +4,9 @@
 
 ### 文档
 
-[查看文档](https://kybetter.gitee.io/cui-pages/)
+[查看文档（github）](https://kybetter.github.io/common-vue-ui/)
+
+[查看文档（gitee）](https://kybetter.gitee.io/common-vue-ui)
 
 ## 安装
 ```bash
