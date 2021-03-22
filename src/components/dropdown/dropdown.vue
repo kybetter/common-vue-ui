@@ -12,7 +12,6 @@
       <drop-container
         ref="drop"
         v-show="currentVisible"
-        v-transfer-dom
         @mouseenter.native="handleMouseenter"
         @mouseleave.native="handleMouseleave"
       >
@@ -104,8 +103,6 @@ export default {
       if (this.trigger !== 'click') {
         return false;
       }
-      // this.handleClose();
-      // if (this.triggerElm.disabled) return;
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
         this.currentVisible = false;

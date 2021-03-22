@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <c-dropdown>
+      <span>下拉菜单</span>
+      <c-dropdown-menu slot="dropdown">
+        <c-dropdown-item>下拉菜单项1</c-dropdown-item>
+        <c-dropdown-item>下拉菜单项2</c-dropdown-item>
+        <c-dropdown-item disabled>下拉菜单项3</c-dropdown-item>
+        <c-dropdown-divider></c-dropdown-divider>
+        <c-dropdown-item>下拉菜单项4</c-dropdown-item>
+      </c-dropdown-menu>
+    </c-dropdown>
+    <c-pagination :totalPage="10" v-model="currentPage"></c-pagination>
     <div style="width: 1200px; margin: 20px auto">
       <c-row :gutter="20">
         <c-col :span="8">
@@ -43,14 +54,7 @@
           <span class="c-text-emerald-600">我是带有颜色的文字</span>
         </div>
       </c-col>
-      <c-col :span="24">
-        <c-dropdown>
-          <span>下拉菜单</span>
-          <c-dropdown-menu slot="dropdown">
-            <span @click="test">下拉菜单项</span>
-          </c-dropdown-menu>
-        </c-dropdown>
-      </c-col>
+      <c-col :span="24"></c-col>
     </c-row>
   </div>
 </template>
@@ -61,6 +65,7 @@ export default {
   components: {},
   data() {
     return {
+      currentPage: 1,
       zhHtml:
         '机械制图与是机械类专业必不可少的两门专业基础课程,都以培养学生的识图、制图能力以及空间想象力为目标.但在实际教学中,两门课程是分开开设的,内容重复,需要花费大量的精力、时间去练习.本文对机械制图与课程进行整合,形成一体化的教学模式,在掌握了机械制图知识的基础上,用计算机软件进行绘图,可以大大提高绘图的速度和精确度,调动了学生学习主动性和积极性,提高了学生参与度,教学效果显著.机械制图与是机械类专业必不可少的两门专业基础课程,都以培养学生的识图、制图能力以及空间想象力为目标.但在实际教学中,两门课程是分开开设的,内容重复,需要花费大量的精力、时间去练习.本文对机械制图与课程进行整合,形成一体化的教学模式,在掌握了机械制图知识的基础上,用计算机软件进行绘图,可以大大提高绘图的速度和精确度,调动了学生学习主动性和积极性,提高了学生参与度,教学效果显著.机械制图与<span class="highlight">CAD</span>是机械类专业必不可少的两门专业基础课程,都以培养学生的识图、制图能力以及空间想象力为目标.但在实际教学中,两门课程是分开开设的,内容重复,需要花费大量的精力、时间去练习.本文对机械制图与<span class="highlight">CAD</span>课程进行整合,形成一体化的教学模式,在掌握了机械制图知识的基础上,用计算机软件进行<span class="highlight">CAD</span>绘图,可以大大提高绘图的速度和精确度,调动了学生学习主动性和积极性,提高了学生参与度,教学效果显著.',
       enHtml:
@@ -69,8 +74,11 @@ export default {
   },
   mounted() {},
   methods: {
-    test() {
-      console.log(2342342);
+    menuclick(e) {
+      console.log('menu', e);
+    },
+    itemclick(e) {
+      console.log('item', e);
     }
     // togglePop() {
     //   this.showPop = !this.showPop;

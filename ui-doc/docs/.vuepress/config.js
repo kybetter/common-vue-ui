@@ -19,7 +19,9 @@ module.exports = {
           '/components/grid',
           '/components/button',
           '/components/ellipsis',
-          '/components/affix'
+          '/components/affix',
+          '/components/dropdown',
+          '/components/pagination',
         ]
       }
     ]

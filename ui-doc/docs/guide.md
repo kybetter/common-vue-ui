@@ -17,9 +17,9 @@ $ npm install common-vue-ui
 // 引入组件
 import CUI from 'common-vue-ui';
 // 引入样式
-// 必须的基础样式（包括了 row、col、ellipsis 等无特定样式的基础组件样式）
-import 'common-vue-ui/lib/styles/index.css';
-// 可选，引入全部有特定样式的组件样式
+// 基础样式[可选]，包含重置和工具样式
+import 'common-vue-ui/lib/styles/base.css';
+// 全部组件样式[可选]
 import 'common-vue-ui/lib/styles/default-theme.css';
 // 也可以单独引用某个组件的默认样式，比如按钮组件
 // import 'common-vue-ui/lib/styles/button.css';
@@ -102,15 +102,13 @@ Vue.use(DropdownMenu);
 
 > 每个组件的 class 均以`c-`开头，如需自定义样式，请到 `common-vue-ui/lib/styles` 中查看对应组件的默认样式，以便修改。
 
-### 全局样式、重置样式和工具样式
+## 全局样式、重置样式和工具样式
 
 > 项目中有一个基础样式文件，用于重置样式，也含有一些工具样式，它已被集合在 `index.css` 中，当然你也可以单独使用它：
 
 ```js
-// 包含所有样式
-import 'common-vue-ui/lib/styles/index.css';
-// 包含 reset、utils 和工具样式
-import 'common-vue-ui/lib/styles/global.css';
+// 包含 reset 和工具样式
+import 'common-vue-ui/lib/styles/base.css';
 // 工具样式，目前包含清除浮动，阴影样式
 import 'common-vue-ui/lib/styles/utils.css';
 // 重置样式，包含了全局字体的设置
@@ -119,7 +117,7 @@ import 'common-vue-ui/lib/styles/reset.css';
 
 ### 字体
 
-根据苹果系统优先和非衬线字体优先的原则，给 `<body>` 标签定义的默认字体如下，你可以根据自身项目需求来覆盖它:
+根据苹果系统优先和非衬线字体优先的原则，`reset.css`给 `<body>` 标签定义的默认字体如下，你可以根据自身项目需求来覆盖它:
 ```css
 font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 ```
@@ -128,3 +126,35 @@ font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe
 
 - 清除浮动：`c-clearfix`。示例：`<div class="c-clearfix"></div>`
 - 阴影：`c-shadow-sm`，`c-shadow`，`c-shadow-lg`，`c-shadow-xl`，`c-shadow-2xl`。示例：`<div class="c-shadow"></div>`
+
+### 颜色工具样式
+
+颜色工具样式提供了文本、背景和边框的预定义样式，你需要自行引入使用。
+
+样式名使用了 css 颜色关键词，可用的关键词有：white, black, transparent, current, rose、pink、fuchsia、purple、violet、indigo、blue、light-blue、cyan、teal、emerald、green、lime、yellow、amber、orange、red、warm-gray、true-gray、gray、cool-gray、blue-gray 这几个。
+
+每个颜色的色值从小到大：50、100、200、300、400、500、600、700、800、900，逐渐加深。
+
+**注意：** 其中 **white（白）, black（黑）, transparent（透明）, current（继承颜色）** 这四个样式没有色值，是纯色的。
+
+```js
+// 引入颜色样式
+import 'common-vue-ui/lib/styles/colors.css';
+```
+
+使用示例：
+
+```html
+<div class="c-bg-rose-600 c-text-white">背景</div>
+<span class="c-text-green-400">文本</span>
+<div 
+  class="c-border-purple-400 c-text-indigo-600" 
+  style="border-width: 1px;border-style: solid;"
+>边框</div>
+```
+
+效果：
+
+<div class="c-bg-rose-600 c-text-white">背景</div>
+<span class="c-text-green-400">文本</span>
+<div class="c-border-purple-400 c-text-indigo-600" style="border-width: 1px;border-style: solid;">边框</div>

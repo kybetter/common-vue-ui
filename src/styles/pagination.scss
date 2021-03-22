@@ -1,0 +1,45 @@
+.c-pagination {
+  box-sizing: border-box;
+  padding-top: 20px;
+  text-align: center;
+  user-select: none;
+  font-size: 14px;
+  .prev,
+  .pager,
+  .next {
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    padding: 0;
+    border: 1px solid #ccc;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #666;
+    background: #fff;
+    transition: all ease .3s;
+    &:hover:not(.prev.disabled):not(.next.disabled) {
+      color: #1890ff;
+      border-color: #1890ff;
+    }
+  }
+  .prev {
+    margin-right: 10px;
+  }
+  .next {
+    transform: rotate(180deg);
+  }
+  .prev.disabled, .next.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  .pager {
+    margin-right: 10px;
+    &.active {
+      color: #1890ff;
+      border-color: #1890ff;
+    }
+  }
+}

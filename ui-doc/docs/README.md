@@ -5,7 +5,7 @@ actionText: 快速上手 →
 actionLink: /guide
 features:
 - title: 兼容 IE
-  details: 因为需要面向 C 端用户，所以组件库在设计上尽量兼容 IE9 以上浏览器。
+  details: 因为需要面向 C 端用户，所以组件库在设计上尽量兼容 IE9 以上浏览器。组件库适配 vue2 版本。
 - title: 自定义组件样式
   details: 大部分组件提供了默认样式，你可以很方便的覆盖它以便自定义你的样式。
 - title: 工具库
