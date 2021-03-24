@@ -8,6 +8,8 @@ import DropdownMenu from './components/dropdown-menu/index.js';
 import DropdownItem from './components/dropdown-item/index.js';
 import DropdownDivider from './components/dropdown-divider/index.js';
 import Pagination from './components/pagination/index.js';
+import Tabs from './components/tabs/index.js';
+import TabPane from './components/tab-pane/index.js';
 
 const components = {
   Row,
@@ -19,18 +21,15 @@ const components = {
   DropdownMenu,
   DropdownItem,
   DropdownDivider,
-  Pagination
+  Pagination,
+  Tabs,
+  TabPane
 };
 
-const install = function(Vue, opts = {}) {
+const install = function(Vue) {
   Object.keys(components).forEach(name => {
     Vue.use(components[name]);
   });
-
-  Vue.prototype.$CUI_CONFIG = {
-    size: opts.size || '',
-    zIndex: opts.zIndex || 2000
-  };
 };
 
 export default {
@@ -49,5 +48,7 @@ export {
   DropdownMenu,
   DropdownItem,
   DropdownDivider,
-  Pagination
+  Pagination,
+  Tabs,
+  TabPane
 };

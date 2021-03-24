@@ -1,0 +1,12 @@
+.c-tabs {
+  .c-tab-nav {
+    display: inline-block;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin: 4px;
+    padding: 2px 4px;
+    &.active {
+      background: cyan;
+    }
+  }
+}

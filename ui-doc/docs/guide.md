@@ -80,22 +80,32 @@ new Vue({
 ```js
 import Vue from 'vue';
 import {
-  Button,
   Row,
   Col,
-  Affix,
+  Button,
   Ellipsis,
+  Affix,
   Dropdown,
   DropdownMenu,
+  DropdownItem,
+  DropdownDivider,
+  Pagination,
+  Tabs,
+  TabPane
 } from 'common-vue-ui';
 
-Vue.use(Button);
 Vue.use(Row);
 Vue.use(Col);
-Vue.use(Affix);
+Vue.use(Button);
 Vue.use(Ellipsis);
+Vue.use(Affix);
 Vue.use(Dropdown);
 Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(DropdownDivider);
+Vue.use(Pagination);
+Vue.use(Tabs);
+Vue.use(TabPane);
 ```
 
 ## 自定义样式

@@ -1,5 +1,18 @@
 <template>
   <div id="app">
+    <c-button @click="show = !show">show</c-button>
+    <div style="width: 500px; height: 400px;margin: 0 auto;" class="c-shadow-xl">
+      <c-tabs v-model="curTab">
+        <c-tab-pane :label="FooBoo" name="first" :index="1">
+          <span slot="label">自定义选项一</span>
+          111111111dfsdf
+        </c-tab-pane>
+        <c-tab-pane label="选项二" name="second" :index="2">22222222222serwe</c-tab-pane>
+        <c-tab-pane v-if="show" label="选项三" name="third" :index="3">3333333333sdfwef</c-tab-pane>
+        <c-tab-pane label="选项四" name="fourth" :index="4">444444sdfwef</c-tab-pane>
+      </c-tabs>
+    </div>
+
     <c-dropdown>
       <span>下拉菜单</span>
       <c-dropdown-menu slot="dropdown">
@@ -60,11 +73,20 @@
 </template>
 
 <script>
+import FooBoo from './components/foo-boo.vue';
+
 export default {
   name: 'App',
   components: {},
   data() {
     return {
+      FooBoo,
+
+      curTab: 'first',
+      show: false,
+      label: h => {
+        return h('div', [h('span', '标签一++')]);
+      },
       currentPage: 1,
       zhHtml:
         '机械制图与是机械类专业必不可少的两门专业基础课程,都以培养学生的识图、制图能力以及空间想象力为目标.但在实际教学中,两门课程是分开开设的,内容重复,需要花费大量的精力、时间去练习.本文对机械制图与课程进行整合,形成一体化的教学模式,在掌握了机械制图知识的基础上,用计算机软件进行绘图,可以大大提高绘图的速度和精确度,调动了学生学习主动性和积极性,提高了学生参与度,教学效果显著.机械制图与是机械类专业必不可少的两门专业基础课程,都以培养学生的识图、制图能力以及空间想象力为目标.但在实际教学中,两门课程是分开开设的,内容重复,需要花费大量的精力、时间去练习.本文对机械制图与课程进行整合,形成一体化的教学模式,在掌握了机械制图知识的基础上,用计算机软件进行绘图,可以大大提高绘图的速度和精确度,调动了学生学习主动性和积极性,提高了学生参与度,教学效果显著.机械制图与<span class="highlight">CAD</span>是机械类专业必不可少的两门专业基础课程,都以培养学生的识图、制图能力以及空间想象力为目标.但在实际教学中,两门课程是分开开设的,内容重复,需要花费大量的精力、时间去练习.本文对机械制图与<span class="highlight">CAD</span>课程进行整合,形成一体化的教学模式,在掌握了机械制图知识的基础上,用计算机软件进行<span class="highlight">CAD</span>绘图,可以大大提高绘图的速度和精确度,调动了学生学习主动性和积极性,提高了学生参与度,教学效果显著.',
@@ -92,10 +114,10 @@ export default {
 
 <style lang="scss">
 #app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  // text-align: center;
+  // color: #2c3e50;
+  // margin-top: 60px;
 }
 </style>

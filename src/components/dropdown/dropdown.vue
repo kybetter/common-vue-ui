@@ -23,12 +23,11 @@
 
 <script>
 import Clickoutside from '../../utils/clickoutside';
-import TransferDom from '../../utils/transfer-dom';
 import DropContainer from './drop-container.vue';
 
 export default {
   name: 'CDropdown',
-  directives: { Clickoutside, TransferDom },
+  directives: { Clickoutside },
   components: { DropContainer },
   provide() {
     return {
