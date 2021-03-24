@@ -1,7 +1,7 @@
 {
   "name": "common-vue-ui",
   "author": "kybetter",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "lib/cui.min.js",
   "style": "lib/styles/index.css",
   "files": [
