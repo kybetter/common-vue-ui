@@ -1,12 +1,72 @@
 .c-tabs {
-  .c-tab-nav {
-    display: inline-block;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    margin: 4px;
-    padding: 2px 4px;
-    &.active {
-      background: cyan;
+  .c-tab-control-bar {
+    position: relative;
+    .c-tab-bottom-bar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #f0f0f0;
+    }
+    &.c-tab-scrollable {
+      padding: 0 32px;
+      .c-tab-prev,
+      .c-tab-next {
+        position: absolute;
+        width: 32px;
+        line-height: 32px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 2;
+        background: #fff;
+        svg {
+          width: 16px;
+          height: 16px;
+          margin-bottom: -4px;
+        }
+      }
+      .c-tab-prev {
+        left: 0;
+      }
+      .c-tab-next {
+        right: 0;
+        transform: rotate(180deg);
+      }
+    }
+    .c-tab-nav-container {
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      .c-tab-nav-scroll {
+        padding-left: 0;
+        margin: 0;
+        float: left;
+        list-style: none;
+        box-sizing: border-box;
+        position: relative;
+        transition: transform 0.5s ease-in-out;
+      }
+      .c-tab-nav {
+        box-sizing: content-box;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        background: #fafafa;
+        border: 1px solid #f0f0f0;
+        border-radius: 4px 4px 0 0;
+        padding: 5px 16px;
+        z-index: 1;
+        transition: all ease 0.3s;
+        &:not(:first-child) {
+          margin-left: 4px;
+        }
+        &.active {
+          border-bottom-color: #fff;
+          color: #1890ff;
+          background: #fff;
+        }
+      }
     }
   }
 }

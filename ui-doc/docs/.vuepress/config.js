@@ -22,6 +22,7 @@ module.exports = {
           '/components/affix',
           '/components/dropdown',
           '/components/pagination',
+          '/components/tabs',
         ]
       }
     ]

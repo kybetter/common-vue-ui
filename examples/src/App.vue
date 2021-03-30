@@ -1,15 +1,25 @@
 <template>
   <div id="app">
     <c-button @click="show = !show">show</c-button>
-    <div style="width: 500px; height: 400px;margin: 0 auto;" class="c-shadow-xl">
+    <div style="width: 500px; height: 400px; margin: 0 auto" class="c-shadow-xl">
       <c-tabs v-model="curTab">
         <c-tab-pane :label="FooBoo" name="first" :index="1">
           <span slot="label">自定义选项一</span>
           111111111dfsdf
         </c-tab-pane>
-        <c-tab-pane label="选项二" name="second" :index="2">22222222222serwe</c-tab-pane>
-        <c-tab-pane v-if="show" label="选项三" name="third" :index="3">3333333333sdfwef</c-tab-pane>
-        <c-tab-pane label="选项四" name="fourth" :index="4">444444sdfwef</c-tab-pane>
+        <c-tab-pane label="选项二选项二" name="second" :index="2">22222222222serwe</c-tab-pane>
+        <c-tab-pane v-if="show" label="选项三选项三" name="third" :index="3">
+          3333333333sdfwef
+        </c-tab-pane>
+        <c-tab-pane label="选项四选项四" name="fourth" :index="4">444444sdfwef</c-tab-pane>
+        <c-tab-pane label="选项5选项5" name="5" :index="5">5</c-tab-pane>
+        <c-tab-pane label="选项6选项6" name="6" :index="6">6</c-tab-pane>
+        <c-tab-pane label="选项7选项7" name="7" :index="7">7</c-tab-pane>
+        <c-tab-pane label="选项7选项8" name="8" :index="8">7</c-tab-pane>
+        <c-tab-pane label="选项7选项9" name="9" :index="9">7</c-tab-pane>
+        <c-tab-pane label="选项7选项10" name="10" :index="10">7</c-tab-pane>
+        <c-tab-pane label="选项7选项11" name="11" :index="11">7</c-tab-pane>
+        <c-tab-pane label="选项7选项12" name="12" :index="12">7</c-tab-pane>
       </c-tabs>
     </div>
 
