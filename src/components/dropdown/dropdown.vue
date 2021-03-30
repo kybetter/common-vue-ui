@@ -72,8 +72,10 @@ export default {
       }
     }
   },
-  created() {
-    // this.triggerElm = this;
+  mounted() {
+    this.$on('on-item-click', () => {
+      this.onClickoutside();
+    });
   },
   methods: {
     handleClick() {

@@ -1,8 +1,11 @@
 <template>
-  <div :class="['c-dropdown-item', disabled ? 'disabled' : '']" @click="handleClick"><slot></slot></div>
+  <div :class="['c-dropdown-item', disabled ? 'disabled' : '']" @click="handleClick">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
+import { findParentComponent } from '../../utils/_utils';
 export default {
   name: 'CDropdownItem',
   props: {
@@ -11,15 +14,20 @@ export default {
       default: false
     },
     name: {
-      default: undefined,
+      default: undefined
     }
   },
   methods: {
     handleClick(e) {
       if (!this.disabled) {
         this.$emit('click', e);
-        if (this.$parent.$options.name === 'CDropdownMenu') {
-          this.$parent.$emit('click', this.name);
+        const dropdownMenu = findParentComponent(this, 'CDropdownMenu');
+        if (dropdownMenu.$options.name === 'CDropdownMenu') {
+          dropdownMenu.$emit('click', this.name);
+        }
+        const dropdown = findParentComponent(this, 'CDropdown');
+        if (dropdown.$options.name === 'CDropdown') {
+          dropdown.$emit('on-item-click', this.name);
         }
       }
     }

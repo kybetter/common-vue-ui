@@ -25,8 +25,8 @@
 
     <c-dropdown placement="bottom-end">
       <span>下拉菜单</span>
-      <c-dropdown-menu slot="dropdown">
-        <c-dropdown-item>下拉菜单项1</c-dropdown-item>
+      <c-dropdown-menu slot="dropdown" @click="menuclick">
+        <c-dropdown-item @click="itemclick">下拉菜单项1</c-dropdown-item>
         <c-dropdown-item>下拉菜单项2</c-dropdown-item>
         <c-dropdown-item disabled>下拉菜单项3</c-dropdown-item>
         <c-dropdown-divider></c-dropdown-divider>
