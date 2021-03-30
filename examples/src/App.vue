@@ -23,7 +23,7 @@
       </c-tabs>
     </div>
 
-    <c-dropdown>
+    <c-dropdown placement="bottom-end">
       <span>下拉菜单</span>
       <c-dropdown-menu slot="dropdown">
         <c-dropdown-item>下拉菜单项1</c-dropdown-item>
@@ -126,7 +126,7 @@ export default {
 #app {
   // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
+  text-align: center;
   // color: #2c3e50;
   // margin-top: 60px;
 }

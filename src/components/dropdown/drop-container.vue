@@ -10,7 +10,12 @@ import Popper from '../../utils/popper/dist/umd/popper.js';
 export default {
   name: 'CDropContainer',
   inject: ['dropdown'],
-  props: {},
+  props: {
+    placement: {
+      type: String,
+      default: 'bottom-start'
+    }
+  },
   data() {
     return {
       popper: null,
@@ -43,7 +48,7 @@ export default {
       } else {
         this.$nextTick(() => {
           this.popper = new Popper(this.dropdown.$el, this.$el, {
-            placement: 'bottom',
+            placement: this.placement,
             modifiers: {
               computeStyle: {
                 gpuAcceleration: false
